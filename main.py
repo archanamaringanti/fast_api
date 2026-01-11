@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from database import create_connection, create_employee, get_employee, get_employee_by_id, update_employee, delete_employee
+from database import create_connection, create_employee, get_employees, get_employee_by_id, update_employee, delete_employee
 
 app = FastAPI()
 connection = create_connection()
