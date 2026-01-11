@@ -51,7 +51,7 @@ def get_employees(connection):
 
 def get_employee_by_id(connection, employee_id):
     query = "SELECT * FROM employees WHERE id = %s"
-    values = (employee_id)
+    values = (employee_id,)
     return fetch_query(connection, query, values)
 
 def update_employee(connection, employee_id, name, sal, role):
