@@ -40,26 +40,26 @@ def fetch_query(connection, query, values=None):
         print(f"The error '{e}' occurred")
     return result
 
-def create_employee(connection, name, dept, role):
-    query = "INSERT INTO company (name, dept, role) VALUES (%s, %s, %s)"
-    values = (name, dept, role)
+def create_employee(connection, name, sal, role):
+    query = "INSERT INTO employees (name, sal, role) VALUES (%s, %s, %s)"
+    values = (name, sal, role)
     execute_query(connection, query, values)
 
 def get_employees(connection):
-    query = "SELECT * FROM company"
+    query = "SELECT * FROM employees"
     return fetch_query(connection, query)
 
 def get_employee_by_id(connection, employee_id):
-    query = "SELECT * FROM company WHERE id = %s"
+    query = "SELECT * FROM employees WHERE id = %s"
     values = (employee_id,)
     return fetch_query(connection, query, values)
 
 def update_employee(connection, employee_id, name, dept, role):
-    query = "UPDATE company SET name = %s, dept = %s, role = %s WHERE id = %s"
-    values = (name, dept, role, employee_id)
+    query = "UPDATE employees SET name = %s, sal = %s, role = %s WHERE id = %s"
+    values = (name, sal, role, employee_id)
     execute_query(connection, query, values)
 
 def delete_employee(connection, employee_id):
-    query = "DELETE FROM company WHERE id = %s"
+    query = "DELETE FROM employees WHERE id = %s"
     values = (employee_id,)
     execute_query(connection, query, values)
