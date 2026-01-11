@@ -23,7 +23,7 @@ def api_get_employees():
 
 @app.get("/employees/{employee_id}")
 def api_get_employee(employee_id: int):
-    employee = get_student_by_id(connection, employee_id)
+    employee = get_employee_by_id(connection, employee_id)
     if not employee:
         raise HTTPException(status_code=404, detail="Employee not found")
     return employee
@@ -35,5 +35,5 @@ def api_update_employee(employee_id: int, employee: Employee):
 
 @app.delete("/employees/{employee_id}")
 def api_delete_student(employee_id: int):
-    delete_student(connection, employee_id)
+    delete_employee(connection, employee_id)
     return {"message": "Employee deleted successfully"}
