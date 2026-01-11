@@ -54,7 +54,7 @@ def get_employee_by_id(connection, employee_id):
     values = (employee_id)
     return fetch_query(connection, query, values)
 
-def update_employee(connection, employee_id, name, dept, role):
+def update_employee(connection, employee_id, name, sal, role):
     query = "UPDATE employees SET name = %s, sal = %s, role = %s WHERE id = %s"
     values = (name, sal, role, employee_id)
     execute_query(connection, query, values)
